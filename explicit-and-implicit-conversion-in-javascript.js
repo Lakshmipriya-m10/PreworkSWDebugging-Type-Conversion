@@ -18,15 +18,24 @@ Use console.log() to clearly show the before-and-after type conversions.
 
 */
 
+let ageStr = "25";
+let totalAgeNum = Number(ageStr) + 5; // Number("25") => 25; 25 + 5 = 30
+console.log("Total Age (explicit Number):", totalAgeNum); // Outputs: 30
 
-let result = "5" - 2;
-console.log("The result is: " + result);
+// Explicit conversion of "5" to number before subtraction
+let result = Number("5") - 2; // Number("5") => 5; 5 - 2 = 3
+console.log("The result is:", result); // Outputs: 3
 
-let isValid = Boolean("false");
+// The string "false" is truthy when used directly in boolean contexts.
+// To interpret the string value as a boolean, compare explicitly to "true".
+let strBool = "false";
+let isValid = (strBool.toLowerCase() === "true"); // only true if the string exactly equals "true"
 if (isValid) {
-    console.log("This is valid!");
+  console.log("This is valid!");
+} else {
+  console.log("This is NOT valid!");
 }
 
-let age = "25";
-let totalAge = age + 5;
-console.log("Total Age: " + totalAge);
+// Demonstrate an edge case: converting a non-numeric string yields NaN
+let badNumber = Number("abc");
+console.log('Number("abc") =>', badNumber, 'typeof =>', typeof badNumber); // NaN
