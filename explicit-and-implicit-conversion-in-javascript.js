@@ -1,32 +1,35 @@
-/*
 
-Part 1: Debugging Challenge
-The JavaScript code below contains intentional bugs related to type conversion.
-Please do the following:
-  - Run the script to observe unexpected outputs.
-  - Debug and fix the errors using explicit type conversion methods like  Number() ,  String() , or    Boolean()  where necessary.
-  - Annotate the code with comments explaining why the fix works.
+// Explicitly convert "5" to a number to make the subtraction clear and intentional
+let result = Number("5") - 2;
+console.log("The result is: " + result); // Output: The result is: 3
 
-Part 2: Write Your Own Examples
-Write their own code that demonstrates:
-  - One example of implicit type conversion.
-  - One example of explicit type conversion.
-
-  *We encourage you to:
-Include at least one edge case, like NaN, undefined, or null .
-Use console.log() to clearly show the before-and-after type conversions.
-
-*/
-
-
-let result = "5" - 2;
-console.log("The result is: " + result);
-
-let isValid = Boolean("false");
+// "false" (as a string) is truthy, so Boolean("false") returns true. This can be confusing.
+// To handle this correctly, check for actual boolean or use string comparison if needed
+let isValid = ("false" === "true"); // This will be false
 if (isValid) {
     console.log("This is valid!");
+} else {
+    console.log("This is NOT valid."); // Correct output
 }
 
+// Convert age to a number before performing addition
 let age = "25";
-let totalAge = age + 5;
-console.log("Total Age: " + totalAge);
+let totalAge = Number(age) + 5;
+console.log("Total Age: " + totalAge); // Output: Total Age: 30
+
+//Implicit type conversion example
+let implicitResult = "10" * 2; // JavaScript automatically converts "10" to number
+console.log("Implicit conversion ('10' * 2):", implicitResult); // 20
+console.log("Type of result:", typeof implicitResult); // number
+
+//Edgecase Nan
+let badNumber = "abc" * 2; // "abc" can't be converted to a number
+console.log("Implicit conversion ('abc' * 2):", badNumber); // NaN
+console.log("Type of result:", typeof badNumber); // number (but it's NaN)
+
+
+//Explicit type converion example
+let value = null;
+let explicitNumber = Number(value);
+console.log("Explicit conversion Number(null):", explicitNumber); // 0
+console.log("Type of result:", typeof explicitNumber); // number
