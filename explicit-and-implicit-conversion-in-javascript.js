@@ -41,4 +41,6 @@ if (isHappy) {console.log("I am happy!");}
 
 let years = Number("12"); 
 let totalYears = years + 3;
-console.log("Total years together: " + totalYears);
+console.log("Total years together: " + totalYears);   
+
+
