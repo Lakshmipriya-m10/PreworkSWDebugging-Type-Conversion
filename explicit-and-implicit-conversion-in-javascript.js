@@ -19,7 +19,7 @@ Use console.log() to clearly show the before-and-after type conversions.
 */
 
 
-let result = "5" - 2;
+let result = Number("5") - 2;
 console.log("The result is: " + result);
 
 let isValid = Boolean("false");
@@ -27,6 +27,20 @@ if (isValid) {
     console.log("This is valid!");
 }
 
-let age = "25";
+let age = Number("25");
 let totalAge = age + 5;
-console.log("Total Age: " + totalAge);
+console.log("Total Age: " + totalAge); 
+
+/**********************************/
+
+let birthday = Number("3") + 30;
+console.log("This is how old I am: " + birthday);
+
+let isHappy = Boolean("false"); 
+if (isHappy) {console.log("I am happy!");} 
+
+let years = Number("12"); 
+let totalYears = years + 3;
+console.log("Total years together: " + totalYears);   
+
+
