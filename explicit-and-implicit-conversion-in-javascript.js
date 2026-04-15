@@ -28,5 +28,18 @@ if (isValid) {
 }
 
 let age = "25";
-let totalAge = age + 5;
+let totalAge = Number(age) + 5;     // value of age is string so it display output 255 ("25" is string and 5).I explicitly change string to number using Number(age) to fix the error.
 console.log("Total Age: " + totalAge);
+
+//implicit type conversion
+let result1 = "5" * 5;
+console.log("The result is " + result1);
+
+//Explicit type conversion
+let number = 15.5;
+console.log(parseInt(number));
+
+// Eg.NaN
+let str = "Hi";
+console.log("Output:Before Conversion = " + str);
+console.log("Output:After Conversion = " + Number(str));
